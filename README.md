@@ -30,7 +30,7 @@ The hooks in this repository can be used by adding the following stub to your `.
 ```yaml
 ---
   -
-    repo: https://github.com/operatehappy/pre-commit-packer
+    repo: https://github.com/BrynardSecurity-packer/pre-commit-packer
     rev: 1.0.0
     hooks:
       - id: packer-validate
