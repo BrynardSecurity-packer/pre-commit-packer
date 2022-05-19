@@ -5,8 +5,8 @@
   name: Validate Packer template(s)
   entry: packer validate
   language: system
-  types: [json]
-  files: ^packer.json$
+  types: [hcl]
+  files: ^packer.hcl$
   always_run: false
   verbose: false
   pass_filenames: true
@@ -21,8 +21,8 @@
   name: Validate Packer template(s)
   entry: hashicorp/packer:light validate
   language: docker_image
-  types: [json]
-  files: ^packer.json$
+  types: [hcl]
+  files: ^packer.hcl$
   always_run: false
   verbose: false
   pass_filenames: true
@@ -37,8 +37,8 @@
   name: Fix Packer template(s) with backwards incompatibilities
   entry: packer fix
   language: system
-  types: [json]
-  files: ^packer.json$
+  types: [hcl]
+  files: ^packer.hcl$
   always_run: false
   verbose: false
   pass_filenames: true
@@ -50,8 +50,8 @@
   name: Fix Packer template(s) with backwards incompatibilities
   entry: hashicorp/packer:light fix
   language: docker_image
-  types: [json]
-  files: ^packer.json$
+  types: [hcl]
+  files: ^packer.hcl$
   always_run: false
   verbose: false
   pass_filenames: true
@@ -63,8 +63,8 @@
   name: Validate Packer template(s) and fix backwards incompatibilities
   entry: packer fix -validate=true
   language: system
-  types: [json]
-  files: ^packer.json$
+  types: [hcl]
+  files: ^packer.hcl$
   always_run: false
   verbose: false
   pass_filenames: true
@@ -76,10 +76,23 @@
   name: Validate Packer template(s) and fix backwards incompatibilities
   entry: hashicorp/packer:light fix -validate=true
   language: docker_image
-  types: [json]
-  files: ^packer.json$
+  types: [hcl]
+  files: ^packer.hcl$
   always_run: false
   verbose: false
   pass_filenames: true
   description: Validates and attempts to fix incompatibilities in a template
+  minimum_pre_commit_version: 1.15.0
+
+-
+  id: packer-fmt-check
+  name: Format and check Packer template(s)
+  entry: packer fmt -check
+  language: system
+  types: [hcl]
+  files: ^packer.hcl$
+  always_run: false
+  verbose: true
+  pass_filenames: true
+  description: Checks format of Packer templates
   minimum_pre_commit_version: 1.15.0
