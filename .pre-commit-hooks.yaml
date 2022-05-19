@@ -6,7 +6,7 @@
   entry: packer validate
   language: system
   types: [hcl]
-  files: ^packer.hcl$
+  files: ^.pkr.hcl$
   always_run: false
   verbose: false
   pass_filenames: true
@@ -22,7 +22,7 @@
   entry: hashicorp/packer:light validate
   language: docker_image
   types: [hcl]
-  files: ^packer.hcl$
+  files: ^.pkr.hcl$
   always_run: false
   verbose: false
   pass_filenames: true
@@ -38,7 +38,7 @@
   entry: packer fix
   language: system
   types: [hcl]
-  files: ^packer.hcl$
+  files: ^.pkr.hcl$
   always_run: false
   verbose: false
   pass_filenames: true
@@ -51,7 +51,7 @@
   entry: hashicorp/packer:light fix
   language: docker_image
   types: [hcl]
-  files: ^packer.hcl$
+  files: ^.pkr.hcl$
   always_run: false
   verbose: false
   pass_filenames: true
@@ -64,7 +64,7 @@
   entry: packer fix -validate=true
   language: system
   types: [hcl]
-  files: ^packer.hcl$
+  files: ^.pkr.hcl$
   always_run: false
   verbose: false
   pass_filenames: true
@@ -77,7 +77,7 @@
   entry: hashicorp/packer:light fix -validate=true
   language: docker_image
   types: [hcl]
-  files: ^packer.hcl$
+  files: ^.pkr.hcl$
   always_run: false
   verbose: false
   pass_filenames: true
@@ -90,7 +90,7 @@
   entry: packer fmt -check
   language: system
   types: [hcl]
-  files: ^packer.hcl$
+  files: ^.pkr.hcl$
   always_run: false
   verbose: true
   pass_filenames: true
